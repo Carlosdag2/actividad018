@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.empresa.datastructures_javafx.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
-
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.empresa.datastructures_javafx.HelloController">
+    <tabs>
+        <Tab text="List">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="242.0" layoutY="87.0" mnemonicParsing="false" onAction="#agregarAL" text="Agregar" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Interfaz List - ArrayList - Vector - LinkedList" />
+                        <TextField fx:id="txt_dato" layoutX="31.0" layoutY="87.0" promptText="Introduce un dato" />
+                        <TextArea fx:id="area_datos" layoutX="28.0" layoutY="129.0" prefHeight="220.0" prefWidth="186.0" />
+                        <Button layoutX="348.0" layoutY="87.0" mnemonicParsing="false" onAction="#mostrarAL" text="Mostrar" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Set">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="242.0" layoutY="87.0" mnemonicParsing="false" onAction="#agregarSet" text="Agregar" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Interfaz Set - HashSet" />
+                        <TextField fx:id="txt_datoSet" layoutX="31.0" layoutY="87.0" promptText="Introduce un dato" />
+                        <ListView fx:id="listViewSet" layoutX="28.0" layoutY="129.0" onMouseClicked="#eliminarElementoSeleccionado" prefHeight="220.0" prefWidth="186.0" />
+                        <Label fx:id="lbl_numItems" layoutX="284.0" layoutY="209.0" prefHeight="20.0" prefWidth="186.0" />
+                        <Button layoutX="348.0" layoutY="87.0" mnemonicParsing="false" onAction="#mostrarSet" text="Mostrar" />
+                        <Button layoutX="428.0" layoutY="87.0" mnemonicParsing="false" onAction="#ordenarSetAlfabeticamente" text="Ordenar Alfabéticamente" />
+                        <Label fx:id="lbl_fechaHora" layoutX="313.0" layoutY="23.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Jugadores">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="600.0">
+                    <children>
+                        <ComboBox fx:id="comboJugadores" layoutX="201.0" layoutY="56.0" prefWidth="150.0" promptText="Seleccionar Jugador" />
+                        <Label layoutX="140.0" layoutY="60.0" text="Jugador:" />
+                        <TextField fx:id="txtGoles" layoutX="201.0" layoutY="136.0" prefWidth="150.0" promptText="Cantidad de Goles" />
+                        <Button layoutX="170.0" layoutY="184.0" mnemonicParsing="false" onAction="#agregarGoles" text="Agregar Goles" />
+                        <Button layoutX="276.0" layoutY="184.0" mnemonicParsing="false" onAction="#mostrarClasificacion" text="Clasificación" />
+                        <TextArea fx:id="areaClasificacion" layoutX="151.0" layoutY="227.0" prefHeight="130.0" prefWidth="250.0" promptText="Clasificación de Pichichis" />
+                        <Label layoutX="153.0" layoutY="140.0" text="Goles:" />
+                        <TextField fx:id="txtJornada" layoutX="201.0" layoutY="98.0" prefWidth="150.0" promptText="Número de Jornada" />
+                        <TextField fx:id="txtNuevoJugador" layoutX="126.0" layoutY="16.0" prefWidth="150.0" promptText="Nuevo Jugador" />
+                        <Button layoutX="299.0" layoutY="16.0" mnemonicParsing="false" onAction="#agregarJugador" text="Agregar Jugador" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Queue">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
